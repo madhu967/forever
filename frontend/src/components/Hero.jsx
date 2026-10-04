@@ -1,5 +1,4 @@
 import React from 'react'
-import { assets } from '../assets/assets'
 
 const Hero = () => {
   return (
@@ -22,7 +21,13 @@ const Hero = () => {
       </div>
 
       {/* Hero Right side  */}
-      <img src={assets.hero_img} className='w-full sm:w-1/2' alt="" />
+      <div className='w-full sm:w-1/2 flex items-end justify-center bg-gradient-to-tr from-[#272727] via-[#363636] to-[#2b2b2b] overflow-hidden min-h-[350px] sm:min-h-[450px]'>
+        <img 
+          src="https://www.pngmart.com/files/1/Fashion-Model-Transparent-PNG.png" 
+          className='w-full max-h-[480px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]' 
+          alt="Fashion Model" 
+        />
+      </div>
     </div>
   )
 }

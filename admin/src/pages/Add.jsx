@@ -23,6 +23,16 @@ const Add = ({token}) => {
   const onSubmitHandler =async (e)=>{
     e.preventDefault();
 
+    if (!image1 && !image2 && !image3 && !image4) {
+      toast.error('Please upload at least one image');
+      return;
+    }
+
+    if (sizes.length === 0) {
+      toast.error('Please select at least one size');
+      return;
+    }
+
     try {
       
       const formData =new FormData();
@@ -51,7 +61,7 @@ const Add = ({token}) => {
         setImage2(false);
         setImage3(false);
         setImage4(false);
-        
+        setSizes([]);
       }
       else{
         toast.error(response.data.message);
@@ -120,7 +130,7 @@ const Add = ({token}) => {
 
         <div>
           <p>Product Price</p>
-          <input onChange={(e)=>setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='25' />
+          <input onChange={(e)=>setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='25' required />
         </div>
       </div>
 

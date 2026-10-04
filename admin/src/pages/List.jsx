@@ -64,7 +64,7 @@ const List = ({token}) => {
       {
         list.map((item,index)=>(
           <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-200 text-sm' key={index}>
-            <img className='w-12' src={item.image[0]} alt="" />
+            <img className='w-12 h-15 aspect-[4/5] object-cover rounded' src={item.image[0]} alt="" />
             <p>{item.name}</p>
             <p>{item.category}</p>
             <p>{currency}{item.price}</p>

@@ -41,12 +41,12 @@ const Product = () => {
             <div className='flex sm:flex-col  overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
               {
                 productData.image.map((item,index)=>(
-                  <img onClick={()=>setImage(item)} src={item} key={index} className='w-[24px] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'></img>
+                  <img onClick={()=>setImage(item)} src={item} key={index} className={`w-[24px] sm:w-full aspect-[4/5] object-cover sm:mb-3 flex-shrink-0 cursor-pointer rounded border ${image === item ? 'border-orange-500' : 'border-transparent'}`}></img>
                 ))
               }
             </div>
             <div className='w-full sm:w-[80%]'>
-              <img src={image} className='w-full h-auto' alt="" />
+              <img src={image} className='w-full aspect-[4/5] object-cover rounded' alt="" />
             </div>
           </div>
 
